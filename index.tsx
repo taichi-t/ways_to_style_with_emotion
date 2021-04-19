@@ -9,12 +9,12 @@ const Main = () => {
       <p className="red">外のテキスト</p>
       <Container>
         <Ul>
-          <p>ulのテキスト</p>
+          <P className="p">ulのテキスト</P>
           <Li>liのテキスト</Li>
           <Li>liのテキスト</Li>
         </Ul>
         <Ul2>
-          <p>ulのテキスト</p>
+          <P>ulのテキスト</P>
           <Li2>li2のテキスト</Li2>
           <Li2>li2のテキスト</Li2>
         </Ul2>
@@ -25,12 +25,18 @@ const Main = () => {
 };
 
 const Container = styled('div')`
-  & .red {
+  & > * > .p {
     color: red;
   }
 `;
 
+
 const Ul = styled('ul')`
+  color: black;
+`;
+
+
+const P = styled('p')`
   color: black;
 `;
 const Li = styled('ul')`
@@ -39,13 +45,9 @@ const Li = styled('ul')`
 
 const Ul2 = styled('ul')`
   color: black;
-
 `;
 const Li2 = styled('ul')`
   color: black;
-  &:hover{
-    color:red
-  }
 `;
 
 ReactDOM.render(<Main />, document.getElementById('app'));
